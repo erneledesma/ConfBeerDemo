@@ -1,0 +1,2 @@
+rootProject.name='BeerConf'
+include ':app'

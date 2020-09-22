@@ -1,0 +1,7 @@
+package com.example.beerconf.network
+
+interface Callback<T> {
+    fun onSuccess(result: T?)
+
+    fun onFailed(exception: Exception)
+}
