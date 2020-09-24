@@ -9,13 +9,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.beerconf.R
 import com.example.beerconf.model.Conference
+import com.example.beerconf.view.ui.fragments.ScheduleFragment
 import java.lang.String.format
 import java.text.MessageFormat.format
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class ScheduleAdapter(val scheduleAdapter: ScheduleAdapter) : RecyclerView.Adapter<ScheduleAdapter.ViewHolder>() {
+class ScheduleAdapter(val scheduleListener: ScheduleListener) : RecyclerView.Adapter<ScheduleAdapter.ViewHolder>() {
+
 
     var listConference = ArrayList<Conference>()
 
@@ -38,6 +40,10 @@ class ScheduleAdapter(val scheduleAdapter: ScheduleAdapter) : RecyclerView.Adapt
 
         holder.tvConferenceHour.text = hourFormat
         holder.tvConferenceAMPM.text = simpleDateFormatAMPM.format(conference.datetime).toUpperCase()
+
+        holder.itemView.setOnClickListener {
+            scheduleListener.onConferenceClicked(conference, position)
+        }
 
     }
 

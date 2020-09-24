@@ -10,11 +10,12 @@
     android:id="@+id/navHomeFragment"
     android:name="com.example.beerconf.view.ui.fragments.HomeFragment"
     android:label="fragment_home"
-    tools:layout="@layout/fragment_home" >
+        app:navGraph="@navigation/navigation_graph"
+        tools:layout="@layout/fragment_home" >
     <action
         android:id="@+id/action_homeFragment_to_scheduleFragment"
         app:destination="@+id/navScheduleFragment" />
-</fragment>
+    </fragment>
     <fragment
         android:id="@+id/navScheduleFragment"
         android:name="com.example.beerconf.view.ui.fragments.ScheduleFragment"
