@@ -16,6 +16,7 @@
         android:id="@+id/action_homeFragment_to_scheduleFragment"
         app:destination="@+id/navScheduleFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/navScheduleFragment"
         android:name="com.example.beerconf.view.ui.fragments.ScheduleFragment"
@@ -28,6 +29,7 @@
             android:id="@+id/action_navScheduleFragment_to_scheduleDetailFramentDialog"
             app:destination="@id/scheduleDetailFramentDialog" />
     </fragment>
+
     <fragment
         android:id="@+id/navSpeakersFragment"
         android:name="com.example.beerconf.view.ui.fragments.SpeakersFragment"

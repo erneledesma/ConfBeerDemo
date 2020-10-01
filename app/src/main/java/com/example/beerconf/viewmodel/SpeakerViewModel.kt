@@ -21,11 +21,13 @@ class SpeakerViewModel : ViewModel() {
     fun  getSpeakerFromFirebase(){
         firestoreService.getSpeakers(object : Callback<List<Speaker>> {
             override fun onSuccess(result: List<Speaker>?) {
+                listSpeaker.postValue(result)
+                proccessFinish()
 
             }
 
             override fun onFailed(exception: Exception) {
-
+                proccessFinish()
             }
         })
     }

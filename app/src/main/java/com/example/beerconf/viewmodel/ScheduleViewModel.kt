@@ -18,11 +18,13 @@ class ScheduleViewModel : ViewModel() {
     fun getScheduleFromFirebase() {
         firestoreService.getSchedule(object : Callback<List <Conference>> {
             override fun onSuccess(result: List<Conference>?) {
+                listSchedule.postValue(result)
+                processFinished()
 
             }
 
             override fun onFailed(exception: Exception) {
-
+                processFinished()
             }
         })
     }
