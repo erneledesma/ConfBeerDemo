@@ -52,13 +52,18 @@ class SpeakersFragment : Fragment() ,SpeakerListener {
 
         }
     fun  observerViewModel() {
-        viewModel.listSpeaker.observe(this, Observer<List<Speaker>>{ speakers ->
+        viewModel.listSpeaker.observe(this,
+            Observer<List<Speaker>>{ speakers ->
             speakers.let {
                 speakerAdapter.updateData((speakers))
             }
         })
+        viewModel.isLoading.observe(this, Observer<Boolean> {
+            if(it != null)
+                rlBase.visibility = View.INVISIBLE
+        })
 
-}
+    }
 
     override fun onSpeakerClicked(speaker: Speaker, position: Int) {
         var bundle = bundleOf("speaker" to speaker)

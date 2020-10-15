@@ -49,7 +49,7 @@ class UbicationFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClic
         val centerMark = LatLng(ubication.latitud, ubication.longitud)
         val markerOptions = MarkerOptions()
         markerOptions.position(centerMark)
-        markerOptions.title("BeerConf LAGSH 2020")
+        markerOptions.title("BeerConf LAGASH 2020")
 
         val bitmapDraw = context?.applicationContext?.let { ContextCompat.getDrawable(it, R.drawable.logo_lagash) as BitmapDrawable }
         val smallMarker = bitmapDraw?.bitmap?.let { Bitmap.createScaledBitmap(it, 150, 150, false) }
@@ -59,7 +59,8 @@ class UbicationFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClic
         googleMap?.addMarker(markerOptions)
         googleMap?.setOnMarkerClickListener(this)
 
-//        googleMap?.setMapStyle(MapStyleOptions.loadRawResourceStyle(context, R.raw.custom_map))
+        googleMap?.setMapStyle(MapStyleOptions.loadRawResourceStyle(context, R.raw.custom_map))
+
 
 }
 

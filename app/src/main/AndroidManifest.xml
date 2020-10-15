@@ -14,16 +14,18 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="" />
 
-        <activity android:name="com.example.beerconf.view.ui.activities.MainActivity">
+        <activity android:name="com.example.beerconf.view.ui.activities.SplashscreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<!--        <activity android:name=".view.ui.activities.MainActivity">-->
 
-<!--        </activity>-->
+        <activity android:name=".view.ui.activities.MainActivity">
+
+       </activity>
+
     </application>
 
 </manifest>
